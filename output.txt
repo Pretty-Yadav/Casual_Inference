@@ -1,0 +1,55 @@
+Before seeing this, learn about p-value, 95% Confidence Interval, 
+and how to read and understand a boxplot with categories
+
+(1) Average Treatment Effect: 0.13040252214025871 / 0.13
+(2) p-value: 0.02785817658562793 / 0.28
+(3) 95% CI: 0.014497461853263352 0.2463075824272541 / [0.014, 0.246]
+(4) Control Median: 0.5299358213620193
+    Treated Median: 0.42517090304498567
+
+Thresholds Interpretation:
+
+(1) --> ~0.1  [Small effect]
+        ~0.3  [Medium effect]
+        ~0.5+ [Large effect]
+
+(2) --> p < 0.05 [Statistically significant (strong evidence)]
+        0.05 – 0.10 [Marginal / weak evidence]
+        > 0.10 [Not significant]
+
+(3) --> Confidence Interval (95% CI)
+        >  0 → [Significant effect]
+
+
+Interpretation of our results:
+
+(1) --> Increasing study hours leads to an average improvement of about 0.13 standard deviation 
+        units in student performance, indicating a positive impact.
+
+(2) --> The p-value of 0.028 shows that the observed effect is statistically significant, 
+        meaning it is unlikely to have occurred by chance.
+
+(3) --> The confidence interval [0.014, 0.246] suggests that the true effect is positive and 
+        likely falls within this range, reinforcing the reliability of the result.
+
+(4) --> The typical (median) student in the control group 
+        performs slightly better than in the treated group.
+
+Overall Insight:
+There is strong evidence that higher study hours have a positive and 
+statistically significant effect on student performance, particularly for the dataset we've chosen.
+
+Chart Explanation - 
+
+Median (middle line in the boxes):
+The median line represents the typical performance. Although the treated group shows some skewness 
+due to low-performing outliers, its median is still slightly higher than the control group 
+if we disregard the outliers, indicating better average performance.
+
+Box (middle 50% of students):
+The treated group (high study hours) has a wider box, 
+showing more variation in performance among students who study more.
+
+Outliers (dots):
+Outliers in the treated group represent students who performed poorly despite studying more.
+This suggests that studying more does not guarantee success for every student.
