@@ -10,7 +10,8 @@
   <nav>
     <div class="container">
       <div class="logo">Causal Inference</div>
-      <ul>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
+      <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="ate.html">Treatment Effect</a></li>
         <li><a href="pvalue.html" class="active">Significance</a></li>
@@ -19,6 +20,20 @@
       </ul>
     </div>
   </nav>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+      <span>Causal Inference</span>
+      <button class="drawer-close" aria-label="Close menu">×</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="ate.html">Treatment Effect</a></li>
+      <li><a href="pvalue.html" class="active">Significance</a></li>
+      <li><a href="ci.html">Confidence</a></li>
+      <li><a href="analysis.html">Analysis</a></li>
+    </ul>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
 
   <main class="container">
     <h1>Statistical Significance (P-Value)</h1>
@@ -123,5 +138,34 @@
   <footer>
     <p>Based on the Student Performance Dataset | Causal Inference Analysis 2026 | Priti Yadav </p>
   </footer>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const drawer = document.getElementById('mobileDrawer');
+    const backdrop = document.getElementById('drawerBackdrop');
+    const drawerClose = document.querySelector('.drawer-close');
+    const drawerLinks = document.querySelectorAll('.drawer-links a');
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      backdrop.classList.add('open');
+    }
+
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      backdrop.classList.remove('open');
+    }
+
+    menuToggle?.addEventListener('click', openDrawer);
+    drawerClose?.addEventListener('click', closeDrawer);
+    backdrop?.addEventListener('click', closeDrawer);
+    drawerLinks.forEach(link => link.addEventListener('click', closeDrawer));
+
+    document.querySelectorAll('nav a').forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  </script>
 </body>
 </html>
