@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Causal Inference Study - Student Performance</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">Causal Inference</div>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="ate.html">Treatment Effect</a></li>
+        <li><a href="pvalue.html">Significance</a></li>
+        <li><a href="ci.html">Confidence</a></li>
+        <li><a href="analysis.html">Analysis</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <div class="hero">
+      <h1>Student Performance Study</h1>
+      <p>Does Increased Study Hours Improve Student Performance?</p>
+    </div>
+
+    <section style="margin: 3rem 0; text-align: center;">
+      <h2>Key Findings at a Glance</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-top: 2rem;">
+        <div class="result-box">
+          <p style="font-size: 0.9rem; color: #666;">Average Effect</p>
+          <div class="metric">0.13</div>
+          <p style="font-size: 0.85rem; color: #666;">Standard Deviations</p>
+        </div>
+        <div class="result-box">
+          <p style="font-size: 0.9rem; color: #666;">P-Value</p>
+          <div class="metric">0.028</div>
+          <p style="font-size: 0.85rem; color: #666;"><strong>Significant</strong></p>
+        </div>
+        <div class="result-box">
+          <p style="font-size: 0.9rem; color: #666;">95% Confidence</p>
+          <div class="metric">[0.014, 0.246]</div>
+          <p style="font-size: 0.85rem; color: #666;">True Effect Range</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Quick Summary</h2>
+      <p>
+        This study examines whether increased study hours causally improve student performance. Using 
+        <strong>propensity score matching</strong>, we controlled for confounding variables and found:
+      </p>
+      <ul>
+        <li>Students with higher study hours show an average improvement of <strong>0.13 standard deviations</strong></li>
+        <li>This effect is <strong>statistically significant</strong> (p = 0.028), meaning it's unlikely due to chance</li>
+        <li>We're 95% confident the true effect lies between <strong>0.014 and 0.246</strong> standard deviations</li>
+      </ul>
+      <p style="margin-top: 1rem;">
+        <strong>Overall Insight:</strong> There is credible evidence that increasing study hours has a positive, 
+        statistically significant impact on student performance.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Based on the Student Performance Dataset | Causal Inference Analysis 2026 | Priti Yadav </p>
+  </footer>
+
+  <script>
+    // Highlight active navigation
+    document.querySelectorAll('nav a').forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confidence Interval - Student Performance Study</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">Causal Inference</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ate.html">Treatment Effect</a></li>
+        <li><a href="pvalue.html">Significance</a></li>
+        <li><a href="ci.html" class="active">Confidence</a></li>
+        <li><a href="analysis.html">Analysis</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>95% Confidence Interval</h1>
+
+    <div class="result-box">
+      <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">Our Result:</p>
+      <div class="metric">[0.014, 0.246]</div>
+      <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+        The true effect likely falls within this range (95% confidence)
+      </p>
+    </div>
+
+    <section class="interpretation-section">
+      <h2>What is a Confidence Interval?</h2>
+      <p>
+        A <strong>95% Confidence Interval (CI)</strong> is a range of values that we're 95% confident 
+        contains the <strong>true effect</strong> in the population.
+      </p>
+      <p style="margin-top: 1rem;">
+        <strong>Important:</strong> The true effect is the actual impact of study hours on student performance in the entire population of students, not just the dataset.
+      </p>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Understanding [0.014, 0.246]</h2>
+      <ul>
+        <li><strong>Lower Bound (0.014):</strong> The minimum likely effect. Even in the most conservative scenario, 
+            studying more likely improves performance by at least 0.014 SDs</li>
+        <li><strong>Upper Bound (0.246):</strong> The maximum likely effect. The benefit is unlikely to exceed 
+            0.246 SDs</li>
+        <li><strong>Point Estimate (0.13):</strong> Our best single estimate of the true effect—the midpoint of the range</li>
+      </ul>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Why This Matters</h2>
+      <table class="threshold-table">
+        <thead>
+          <tr>
+            <th>CI Interpretation</th>
+            <th>What It Means</th>
+            <th>Our Case?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Does NOT cross 0</strong></td>
+            <td>The effect is likely real (positive or negative)</td>
+            <td>✓ [0.014, 0.246] is entirely above 0</td>
+          </tr>
+          <tr>
+            <td>Wide interval</td>
+            <td>Lots of uncertainty about the true effect</td>
+            <td>✗ Not our case</td>
+          </tr>
+          <tr>
+            <td>Crosses 0</td>
+            <td>Effect could be positive or negative (not significant)</td>
+            <td>✗ Not our case</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>What This Tells Us</h2>
+      <p>
+        Because our 95% CI is <strong>[0.014, 0.246]</strong> (entirely above zero) we know:
+      </p>
+      <ul>
+        <li>✅ <strong>Positive Effect Confirmed:</strong> Increased study hours genuinely improve performance</li>
+        <li>✅ <strong>Effect is Real:</strong> Not due to mathematical chance</li>
+        <li>✅ <strong>Reasonable Precision:</strong> We're not wildly uncertain—the interval is fairly tight</li>
+        <li>✅ <strong>Practical Insight:</strong> The true effect is somewhere between a small and small-to-moderate improvement</li>
+      </ul>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Connecting the Pieces</h2>
+      <div style="background: #f0f4ff; padding: 1.5rem; border-radius: 5px;">
+        <ul style="margin: 0;">
+          <li><strong>Point Estimate (ATE):</strong> 0.13 — our best single guess</li>
+          <li><strong>P-Value:</strong> 0.028 — confirms this effect is real, not random</li>
+          <li><strong>95% CI:</strong> [0.014, 0.246] — the likely range of the true effect</li>
+        </ul>
+        <p style="margin-top: 1rem; font-size: 0.95rem;">
+          Together, these tell us: <strong>"Increased study hours have a real, positive effect on performance, 
+          and it's likely to be between 0.014 and 0.246 standard deviations."</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Summary</h2>
+      <p>
+        Our 95% confidence interval of <strong>[0.014, 0.246]</strong> is entirely above zero, 
+        providing strong evidence that increasing study hours causally improves student performance.
+      </p>
+    </section>
+
+    <a href="index.html" style="display: inline-block; margin-top: 2rem; padding: 0.8rem 1.5rem; 
+       background: #667eea; color: white; text-decoration: none; border-radius: 5px;">← Back to Home</a>
+
+  </main>
+
+  <footer>
+    <p>Based on the Student Performance Dataset | Causal Inference Analysis 2026 | Priti Yadav </p>
+  </footer>
+</body>
+</html>

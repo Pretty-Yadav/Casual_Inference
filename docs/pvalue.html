@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statistical Significance - Student Performance Study</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">Causal Inference</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ate.html">Treatment Effect</a></li>
+        <li><a href="pvalue.html" class="active">Significance</a></li>
+        <li><a href="ci.html">Confidence</a></li>
+        <li><a href="analysis.html">Analysis</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Statistical Significance (P-Value)</h1>
+
+    <div class="result-box">
+      <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">Our Result:</p>
+      <div class="metric">0.028</div>
+      <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+        This effect is <strong>statistically significant</strong> (p < 0.05)
+      </p>
+    </div>
+
+    <section class="interpretation-section">
+      <h2>What is a P-Value?</h2>
+      <p>
+        <strong>Definition:</strong> The p-value is the probability of observing our result 
+        (or more extreme) <strong>if there was actually no real effect</strong> (null hypothesis is true).
+      </p>
+      <p style="margin-top: 1rem;">
+        In everyday language: <em>"How likely is it that we saw this result by pure chance?"</em>
+      </p>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Understanding the Numbers</h2>
+      <table class="threshold-table">
+        <thead>
+          <tr>
+            <th>P-Value Range</th>
+            <th>Interpretation</th>
+            <th>Our Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="background: #d4edda;"><strong>p < 0.05</strong></td>
+            <td style="background: #d4edda;">Statistically significant (strong evidence)</td>
+            <td style="background: #d4edda;">✓ 0.028 (our result)</td>
+          </tr>
+          <tr>
+            <td>0.05 – 0.10</td>
+            <td>Marginal / weak evidence</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>p > 0.10</td>
+            <td>Not statistically significant</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>What Does 0.028 Mean?</h2>
+      <ul>
+        <li><strong>2.8% Chance:</strong> If studying more had <em>no real effect</em>, we'd see a result 
+            this extreme or more extreme only 2.8% of the time by pure luck</li>
+        <li><strong>97.2% Confidence:</strong> We're quite confident (97.2%) this is a real effect, not random noise</li>
+        <li><strong>Below 0.05 Threshold:</strong> This meets the standard scientific threshold for significance</li>
+        <li><strong>Strong Evidence:</strong> This is strong evidence that increased study hours really do cause 
+            improved performance</li>
+      </ul>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Why This Matters</h2>
+      <p>
+        Without statistical significance, we couldn't be confident that the effect we observed was real. 
+        The low p-value (0.028) means we can be confident that:
+      </p>
+      <ul>
+        <li>The observed improvement in test scores is <strong>unlikely due to chance</strong></li>
+        <li>The effect we found is <strong>robust and reproducible</strong></li>
+        <li>We have <strong>strong evidence</strong> for a causal relationship between study hours and performance</li>
+      </ul>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Common Misconceptions</h2>
+      <ul>
+        <li><strong>❌ Wrong:</strong> "0.028 means there's a 2.8% chance our result is wrong"</li>
+        <li><strong>✓ Right:</strong> "0.028 is the probability of observing this result if there was no real effect"</li>
+        <li><strong>❌ Wrong:</strong> "Statistical significance means the effect is large"</li>
+        <li><strong>✓ Right:</strong> "Statistical significance means the effect is real, not about its size"</li>
+      </ul>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Summary</h2>
+      <p>
+        Our p-value of <strong>0.028</strong> gives us strong confidence that increased study hours 
+        causally improve student performance. This is not a coincidence—it's a real effect.
+      </p>
+    </section>
+
+    <a href="index.html" style="display: inline-block; margin-top: 2rem; padding: 0.8rem 1.5rem; 
+       background: #667eea; color: white; text-decoration: none; border-radius: 5px;">← Back to Home</a>
+
+  </main>
+
+  <footer>
+    <p>Based on the Student Performance Dataset | Causal Inference Analysis 2026 | Priti Yadav </p>
+  </footer>
+</body>
+</html>

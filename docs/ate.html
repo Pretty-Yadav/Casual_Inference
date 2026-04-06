@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Average Treatment Effect - Student Performance Study</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">Causal Inference</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ate.html" class="active">Treatment Effect</a></li>
+        <li><a href="pvalue.html">Significance</a></li>
+        <li><a href="ci.html">Confidence</a></li>
+        <li><a href="analysis.html">Analysis</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Average Treatment Effect (ATE)</h1>
+
+    <div class="result-box">
+      <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">Our Result:</p>
+      <div class="metric">0.13 standard deviations</div>
+      <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+        Increasing study hours leads to this much improvement in student performance
+      </p>
+    </div>
+
+    <section class="interpretation-section">
+      <h2>What is the Average Treatment Effect?</h2>
+      <p>
+        The <strong>Average Treatment Effect (ATE)</strong> is the average difference in 
+        student performance between those who studied more (treated group) and those who studied less (control group), 
+        after matching them on similar characteristics.
+      </p>
+      <p style="margin-top: 1rem;">
+        In simple terms: <em>"On average, how much better do students perform when they study more?"</em>
+      </p>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>How to Interpret 0.13</h2>
+      <p>
+        <strong>0.13 standard deviations</strong> means the treated group's performance is 0.13 SDs above the control group.
+      </p>
+      <table class="threshold-table">
+        <thead>
+          <tr>
+            <th>Effect Size</th>
+            <th>Interpretation</th>
+            <th>Our Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>~0.1 - 0.2</td>
+            <td><strong>Small effect</strong></td>
+            <td>✓ 0.13 (our result)</td>
+          </tr>
+          <tr>
+            <td>~0.3 - 0.5</td>
+            <td>Medium effect</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>0.5+</td>
+            <td>Large effect</td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>What Does This Mean Practically?</h2>
+      <ul>
+        <li><strong>Positive Impact:</strong> Studying more genuinely improves performance—not just random variation</li>
+        <li><strong>Modest Size:</strong> The effect is small but meaningful. It's not life-changing, but it matters</li>
+        <li><strong>Real-World Significance:</strong> If a student starts with average performance, extra study would 
+            move them up by a small but noticeable amount</li>
+        <li><strong>Causal:</strong> This is a causal effect (not just correlation) because we used 
+            propensity score matching to control for confounding</li>
+      </ul>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Why This Matters</h2>
+      <p>
+        Even small causal effects are valuable for policy and practice. If we know that <strong>every 
+        extra hour of study causally improves performance by a measurable amount</strong>, we have 
+        evidence to recommend increased study as an intervention.
+      </p>
+    </section>
+
+    <a href="index.html" style="display: inline-block; margin-top: 2rem; padding: 0.8rem 1.5rem; 
+       background: #667eea; color: white; text-decoration: none; border-radius: 5px;">← Back to Home</a>
+
+  </main>
+
+  <footer>
+    <p>Based on the Student Performance Dataset | Causal Inference Analysis 2026 | Priti Yadav </p>
+  </footer>
+</body>
+</html>

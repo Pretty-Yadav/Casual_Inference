@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Analysis & Charts - Student Performance Study</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <div class="logo">Causal Inference</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ate.html">Treatment Effect</a></li>
+        <li><a href="pvalue.html">Significance</a></li>
+        <li><a href="ci.html">Confidence</a></li>
+        <li><a href="analysis.html" class="active">Analysis</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1>Data Analysis & Visualization</h1>
+
+    <section class="interpretation-section">
+      <h2>The Boxplot: Control vs Treated Groups</h2>
+      <div class="chart-container">
+        <img src="outcome_comparison.png" alt="Student Performance: Control vs Treated - Boxplot">
+      </div>
+      <p style="text-align: center; color: #666; margin-top: 1rem;">
+        This boxplot compares normalized student performance between control (low study hours) and 
+        treated (high study hours) groups
+      </p>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Reading the Boxplot</h2>
+      <div style="background: #f9f9f9; padding: 1.5rem; border-radius: 5px; margin: 1.5rem 0;">
+        <h3 style="color: #667eea; margin-top: 0;">Boxplot Components:</h3>
+        <ul style="margin: 1rem 0;">
+          <li><strong>Box (Middle 50% of Data):</strong> Contains half the students. Shows how spread out the "typical" students are</li>
+          <li><strong>Line Inside Box (Median):</strong> The middle value. 50% of students score above it, 50% below</li>
+          <li><strong>Whiskers (Lines Extending from Box):</strong> Show the range of typical data (usually all data except extreme outliers)</li>
+          <li><strong>Dots (Outliers):</strong> Unusual data points far from the typical range</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>What Our Boxplot Shows</h2>
+      <h3>Median Comparison</h3>
+      <p>
+        The line inside each box shows the <strong>median performance</strong>:
+      </p>
+      <ul>
+        <li><strong>Control Group Median:</strong> 0.530 (higher on the chart)</li>
+        <li><strong>Treated Group Median:</strong> 0.425 (slightly lower on the chart)</li>
+        <li><strong>Interpretation:</strong> At first glance, control seems "better," but this is misleading...</li>
+      </ul>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Understanding the Contradiction</h2>
+      <p>
+        <strong>Finding:</strong> If the treated group's ATE is +0.13 (better), why does its median appear lower?
+      </p>
+      <p style="margin-top: 1rem;">
+        <strong>Answer:</strong> The boxplot shows <strong>medians</strong>, while the ATE shows the <strong>mean (average)</strong>.
+      </p>
+      <ul>
+        <li><strong>Outliers in Treated Group:</strong> Many poor-performing dots (below -1.0) pull down the median</li>
+        <li><strong>Mean is Different:</strong> The mean (0.13 higher for treated) accounts for all values, 
+            smoothing out the outliers</li>
+        <li><strong>Why the Outliers?:</strong> Some students study a lot but still perform poorly—perhaps due to 
+            learning difficulty or other factors</li>
+        <li><strong>Reality Check:</strong> Both statistics are correct. They just measure different things.</li>
+      </ul>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Box Width (Spread/Variability)</h2>
+      <ul>
+        <li><strong>Treated Group (Right):</strong> Wider box = more variation. Students who study have more diverse outcomes</li>
+        <li><strong>Control Group (Left):</strong> Narrower box = less variation. Low-study students are more consistent</li>
+        <li><strong>Interpretation:</strong> Extra study increases the range of possibilities—it helps some a lot, 
+            doesn't help others much</li>
+      </ul>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>Key Insights: </h2>
+      <div style="background: #d4edda; padding: 1.5rem; border-radius: 5px; margin: 1.5rem 0;">
+        <ul style="margin: 0;">
+          <li>✅ <strong>Treatment Helps on Average:</strong> ATE of +0.13 shows mean treated performance is higher</li>
+          <li>⚠️ <strong>Not Universal:</strong> The outliers show that studying doesn't guarantee success for everyone</li>
+          <li>📊 <strong>Increased Variability:</strong> Students who study more have more diverse outcomes (wider spread)</li>
+          <li>🎯 <strong>Causal Effect Confirmed:</strong> After matching on confounders, the treated group is genuinely better on average</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="interpretation-section">
+      <h2>What We're NOT Seeing</h2>
+      <ul>
+        <li>❌ A transformation that makes everyone in the treated group better (some outliers are actually worse)</li>
+        <li>❌ That high study hours guarantee high performance</li>
+        <li>❌ That studying is the only factor affecting performance</li>
+      </ul>
+      <p style="margin-top: 1rem;">
+        <strong>What we ARE seeing:</strong> On average, increased study hours shift the distribution upward, 
+        creating a real causal benefit despite the outliers.
+      </p>
+    </section>
+
+
+    <a href="index.html" style="display: inline-block; margin-top: 2rem; padding: 0.8rem 1.5rem; 
+       background: #667eea; color: white; text-decoration: none; border-radius: 5px;">← Back to Home</a>
+
+  </main>
+
+  <footer>
+    <p>Based on the Student Performance Dataset | Causal Inference Analysis 2026 | Priti Yadav </p>
+  </footer>
+</body>
+</html>
