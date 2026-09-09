@@ -1,0 +1,33 @@
+STUDENT PERFORMANCE CAUSAL INFERENCE PROJECT
+
+PROJECT QUESTION
+
+This project examines whether students who spend more time studying achieve better academic performance. The data is observational, meaning students were not randomly assigned to study more or less. Because students may differ in other important ways, a direct comparison could be misleading.
+
+DATASET
+
+The analysis uses Student_Performance_Ready.csv, which contains 493 student records. The main outcome is Overall, the student's performance score. Treatment identifies the higher-study-hours group and the lower-study-hours control group. The dataset also includes observed characteristics such as attendance, income, hometown, computer access, employment, gaming, semester, previous HSC and SSC scores, and department indicators.
+
+WORKFLOW
+
+1. Prepare the data: Load the CSV file and standardize the Overall performance score so results can be reported in standard deviation units.
+
+2. Estimate treatment likelihood: Use logistic regression to estimate each student's probability of being in the higher-study-hours group based on the observed characteristics.
+
+3. Improve comparability: Remove students with very extreme treatment probabilities, then match each treated student with five nearby control students using their propensity scores. A 0.05 matching caliper removes matches that are too dissimilar.
+
+4. Estimate the effect: Compare the average matched performance of the treated and control groups. Calculate the average treatment effect, a Welch t-test p-value, and a 95% confidence interval.
+
+5. Display the results: Create a boxplot to compare the performance distributions and show differences in spread and outliers.
+
+RESULTS
+
+The estimated average treatment effect was +0.130 standard deviations, meaning the higher-study-hours group had better average standardized performance after matching students with similar observed characteristics. The p-value was 0.028, and the 95% confidence interval was [0.014, 0.246] standard deviations. Since the interval remains above zero, the results support a positive average effect in this dataset.
+
+The median results were less favorable for the treated group: 0.530 for the control group and 0.425 for the treated group. The treated group also showed greater variation and included low-performing outliers. This means that studying more was associated with better performance on average, but the outcome was not the same for every student.
+
+CONCLUSION
+
+After adjusting for the student characteristics available in the dataset, the analysis found credible evidence that higher study hours are linked to better average performance. However, this is not definitive proof that studying more causes the same improvement for all students. Unmeasured differences may still affect the result, and the contrast between the mean and median shows why the average effect should be interpreted carefully.
+
+The analysis can be reproduced with script.py after installing the required Python packages. The project also includes an explanatory website in the docs/ folder.
