@@ -1,0 +1,17 @@
+Student Performance Causal Inference Analysis
+
+Problem
+The goal was to examine whether increased study hours improve student performance. Because this is observational student data rather than a randomized experiment, students who study more may also differ in other ways that affect their results.
+
+Dataset and approach
+The analysis used Student_Performance_Ready.csv, which contains 493 student records. Each record includes a binary Treatment variable, the Overall performance score, department indicators, and observed characteristics such as gender, income, hometown, attendance, computer access, English, employment, gaming, semester, HSC, and SSC measures. Treatment represents the higher-study-hours group, while the control group represents the lower-study-hours group.
+
+Overall was standardized so the estimated effect could be reported in standard deviation units. A logistic regression estimated each student's propensity score, or the probability of being in the treated group based on the observed characteristics. Records with scores outside the 0.05 to 0.95 overlap range were removed. For each treated student, the analysis selected five nearest control observations by propensity score and retained matches whose average distance was below the 0.05 caliper.
+
+Results and findings
+The estimated average treatment effect was +0.130 standard deviations. This means the treated group had higher average standardized performance than comparable control students. A Welch two-sample t-test gave a p-value of 0.028. The calculated 95% confidence interval was [0.014, 0.246] standard deviations, which stays above zero.
+
+The reported control median was 0.530 and the treated median was 0.425. Therefore, the median comparison does not show a higher typical treated score, even though the matched treated mean was higher. The treated group also showed more variation in the boxplot and included low-performing outliers.
+
+Conclusion
+After adjusting for the observed characteristics with propensity-score matching, the results provide evidence of a positive average relationship between higher study hours and performance in this dataset. The result does not prove that study hours cause the same improvement for every student. Unmeasured differences between students may still affect the estimate, and the median and mean results show that the average improvement is not uniform across students.

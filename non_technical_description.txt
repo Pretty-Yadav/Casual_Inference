@@ -1,0 +1,17 @@
+Student Performance Study
+
+What was the problem?
+We wanted to find out whether students who study more tend to perform better. Since the data came from students as they naturally were, rather than from a controlled experiment, other differences between students could also influence performance.
+
+What did we use and do?
+We used Student_Performance_Ready.csv, a dataset with 493 student records. It includes each student's performance score, a treatment label for the higher-study-hours group, and background information such as attendance, income, department, computer access, previous scores, and other student characteristics.
+
+We compared students with similar observed backgrounds. First, we estimated how likely each student was to be in the higher-study-hours group. We then matched each treated student with up to five similar students from the lower-study-hours group. This helped make the comparison fairer by reducing the effect of the differences we could observe.
+
+What were the results?
+The higher-study-hours group scored about 0.13 standard deviations higher on average. The p-value was 0.028, which supports the idea that this difference was unlikely to be due to random chance alone. The estimated 95% range for the average improvement was 0.014 to 0.246 standard deviations.
+
+The average result was positive, but it did not apply equally to everyone. The control group's median score was 0.530, compared with 0.425 for the treated group, and the treated group had more variation and some low-performing students.
+
+Conclusion
+For these students, the analysis found credible evidence that higher study hours are linked with better average performance after accounting for the student information available in the dataset. Studying more may help on average, but it does not guarantee a better result for every student. Because this was observational data, the findings should be treated as evidence of an effect, not as absolute proof for all students.
